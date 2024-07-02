@@ -1,0 +1,7 @@
+<h3>Bonjour {{ name }} Cliquez sur le lien ci-dessous pour confirmer votre inscription</h3>
+<br>
+<a href="{{url('security_validation',{'code':code})}}">
+    Validation de l'inscription
+</a>
+<br>
+<img src={{ absolute_url(asset(get_env('CHEMIN_IMAGES') ~ "/logo.png")) }}>

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %} 
+{% block title %}Modification d'un Livre{% endblock %}
+{% block body %}
+<br>
+<h4>Modification d'un Livre </h4>
+
+{{ include('livre/_form.html.twig',{'button_label':'Modifiez le livre '}) }}
+
+{% endblock %}

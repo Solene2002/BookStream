@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des livres{% endblock %}
+
+{% block body %}
+<section class="livres">
+    {% for livre in livres %}  
+    {% if (loop.index - 1)% 3==0 or loop.index==0 %}
+        <br>
+        <div class="row">
+    {% endif %}
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/{{livre.image}}" alt="" class="card-img-top">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{livre.title}}</h4>
+                        <p class="card-text">{{livre.content|point|raw}}</p>
+                        <a href="{{path('livre_show',{'id':livre.id})}}" class="btn btn-primary">
+                            lire la suite
+                        </a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Ecrit le {{livre.createdAt|date('d/m/Y')}} 
+                        à {{livre.createdAt|date('H:i')}} dans la catégorie {{livre.category.description}}
+                        {% if livre.modifiedAt %}
+                            modifié le {{livre.modifiedAt|date('d/m/Y')}} 
+                        {% endif %}
+                        par {{livre.user.username}}
+                    </div>
+                </div>
+            </div>
+        {% if loop.index % 3==0 %} 
+         </div>
+        {% endif %}
+     {% endfor %}
+    <br>
+    {% if previous>0 %}
+            <a class="btn btn-primary" href="{{path('livre_index',{offset:previous})}}">
+            Précédent
+            </a>
+    {% endif %}
+    {% if next<livres|length %}
+            <a class="btn btn-primary" href="{{path('livre_index',{offset:next})}}">
+            Suivant
+            </a>
+    {% endif %}
+    <br><br>
+</section>
+{% endblock %}

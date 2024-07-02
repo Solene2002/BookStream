@@ -1,0 +1,163 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Parcourir les Histoires{% endblock %}
+
+{% block body %}
+
+<title>Parcourir</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+<div class="container mt-3">
+    <h5>Affiner par mot-clé :</h5>
+    <div class="keywords-container">
+        <button class="btn keyword-btn keyword-btn-outline">fantasy</button>
+        <button class="btn keyword-btn keyword-btn-outline">romance</button>
+        <button class="btn keyword-btn keyword-btn-outline">marvel</button>
+        <button class="btn keyword-btn keyword-btn-outline">youngadult</button>
+        <button class="btn keyword-btn keyword-btn-outline">livresaudios</button>
+        <button class="btn keyword-btn keyword-btn-outline">fantastique</button>
+        <button class="btn keyword-btn keyword-btn-outline">magie</button>
+        <button class="btn keyword-btn keyword-btn-outline">combat</button>
+        <button class="btn keyword-btn keyword-btn-outline">aventure</button>
+        <button class="btn keyword-btn keyword-btn-outline">sciencefiction</button>
+        <button class="btn keyword-btn keyword-btn-outline">vampires</button>
+        <button class="btn keyword-btn keyword-btn-outline">self-insert</button>
+        <button class="btn keyword-btn keyword-btn-outline">fanfiction</button>
+        <button class="btn keyword-btn keyword-btn-outline">recherchedesoi</button>
+        <button class="btn keyword-btn keyword-btn-outline">mondealternatif</button>
+        <button class="btn keyword-btn keyword-btn-outline">multivers</button>
+        <button class="btn keyword-btn keyword-btn-outline">hungergames</button>
+        <button class="btn keyword-btn keyword-btn-outline">anime</button>
+        <button class="btn keyword-btn keyword-btn-outline">policier</button>
+        <button class="btn keyword-btn keyword-btn-outline">enquêtes</button>
+        <button class="btn keyword-btn keyword-btn-outline">super-héros</button>
+        <button class="btn keyword-btn keyword-btn-outline">loup-garous</button>
+        <button class="btn keyword-btn keyword-btn-outline">harrypotter</button>
+        <button class="btn keyword-btn keyword-btn-outline">reecriture</button>
+    </div>
+</div>
+
+<br>
+<br>
+
+<!-- Book 1 -->
+    <div class="col-md-3 mb-4">
+        <div class="card">
+            <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/naruto.jpg"  class="card-img-top" alt="Naruto">
+            <div class="card-body">
+                <h5 class="card-title">Quelque chose s'achève ....</h5>
+                <p class="card-text">50K Lu 35.7K Votes</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Book 2 -->
+    <div class="col-md-3 mb-4">
+        <div class="card">
+            <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/naruto.jpg"  class="card-img-top" alt="Naruto">
+            <div class="card-body">
+                <h5 class="card-title">Quelque chose s'achève ....</h5>
+                <p class="card-text">50K Lu 35.7K Votes</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 3 -->
+    <div class="col-md-3 mb-4">
+        <div class="card">
+            <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/voleuse-secret.jpg"  class="card-img-top" alt="Voleuse-secrets">
+            <div class="card-body">
+                <h5 class="card-title">La Voleuse de Secrets - Original Story</h5>
+                <p class="card-text">2.3K Lu 1.3K Votes</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 4 -->
+    <div class="col-md-3 mb-4">
+        <div class="card">
+            <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/choisir.jpg"  class="card-img-top" alt="Choisir">
+            <div class="card-body">
+                <h5 class="card-title">Choisir - Tome 1 (A twilight Story)</h5>
+                <p class="card-text">43K Ecoute 22.7K Votes</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 5 -->
+    <div class="col-md-3 mb-4">
+        <div class="card">
+            <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/pupille-alpha.jpg"  class="card-img-top" alt="Alpha">
+            <div class="card-body">
+                <h5 class="card-title">La Pupille de l'Apha</h5>
+                <p class="card-text">8.6K Lu 5K Votes</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 6 -->
+    <div class="col-md-3 mb-4">
+        <div class="card">
+            <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/nostraria.jpg"  class="card-img-top" alt="Nostraria">
+            <div class="card-body">
+                <h5 class="card-title">Le Joyau de Nostraria</h5>
+                <p class="card-text">37K Ecoute 15.7K Votes</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 7 -->
+    <div class="col-md-3 mb-4">
+        <div class="card">
+            <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/jeudieux.jpg"  class="card-img-top" alt="Jeu-dieux">
+            <div class="card-body">
+                <h5 class="card-title">Le jeu des dieux </h5>
+                <p class="card-text">50K Lu 29.7K Votes</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Book 8 -->
+    <div class="col-md-3 mb-4">
+        <div class="card">
+            <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/animalix.jpg"  class="card-img-top" alt="Animalix">
+            <div class="card-body">
+                <h5 class="card-title">L'Histoire d'Animalix</h5>
+                <p class="card-text">17K Ecoute 4.7K Votes</p>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#">5</a></li>
+          <!-- ... additional page numbers as needed ... -->
+          <li class="page-item"><a class="page-link" href="#">&raquo;</a></li> <!-- Next page -->
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+{% endblock %}

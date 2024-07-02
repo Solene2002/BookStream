@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Liste de Lectures {% endblock %}
+
+{% block body %}
+
+
+<title>Liste de Lectures</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createListModal">
+                Créer une Liste de Lectures
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="createListModal" tabindex="-1" role="dialog"
+                aria-labelledby="createListModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="createListModalLabel">Créer une Liste de Lectures</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Donnez un nom à votre Liste de Lectures.</p>
+                            <input type="text" class="form-control"
+                                placeholder="par exemple, les meilleurs livres de Fantasy">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                            <button type="button" class="btn btn-danger">Créer ma Liste</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <!-- List of reading collections -->
+            <div class="list-group">
+                <!-- Collection item -->
+                <a href="{{path('bibliotheque_exemple')}}"
+                    class="list-group-item d-flex justify-content-between align-items-center">
+                    <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/couverture_mousquetaire.jpg" class="img-fluid rounded"
+                        alt="Cover 1" style="width: 60px; height: auto;">
+                    <strong class="mx-3">3 mousquetaires ❤️⚜️⚜️ </strong>
+                    <span class="badge badge-primary badge-pill">3 Histoires</span>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ...
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Supprimer la Liste</a>
+                        <a class="dropdown-item" href="#">Partager ma Liste</a>
+                    </div>
+                </a>
+
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/couverture_marvel.jpg" class="img-fluid rounded"
+                        alt="Cover 1" style="width: 60px; height: auto;">
+                    <strong class="mx-3">Marvel 💖🥰</strong>
+                    <span class="badge badge-primary badge-pill">8 Histoires</span>
+                    <span class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Supprimer la Liste</a>
+                            <a class="dropdown-item" href="#">Partager ma Liste</a>
+                        </div>
+                    </span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/couverture_adore.jpg" class="img-fluid rounded"
+                        alt="Cover 1" style="width: 60px; height: auto;">
+                    <strong class="mx-3">J'adore ❤️🐱</strong>
+                    <span class="badge badge-primary badge-pill">8 Histoires</span>
+                    <span class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Supprimer la Liste</a>
+                            <a class="dropdown-item" href="#">Partager ma Liste</a>
+                        </div>
+                    </span>
+                </div>
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/couverture_twilight.jpg" class="img-fluid rounded"
+                        alt="Cover 1" style="width: 60px; height: auto;">
+                    <strong class="mx-3">Twilight 🐺🧛‍♀️ </strong>
+                    <span class="badge badge-primary badge-pill">8 Histoires</span>
+                    <span class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ...
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Supprimer la Liste</a>
+                            <a class="dropdown-item" href="#">Partager ma Liste</a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %} 
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}  
+{% block body %}
+    <br>
+    <article>
+        <h2>{{livre.title}}</h2>
+        <div class="metadata">
+            Ecrit le {{livre.createdAt|date('d/m/Y')}} 
+            à {{livre.createdAt|date('H:i')}} 
+            dans la catégorie {{livre.category.description}}
+            {% if livre.modifiedAt %}
+                modifié le {{livre.modifiedAt|date('d/m/Y')}} 
+            {% endif %}
+            par {{livre.user.username}} <br>
+            <strong>statut {{livre.etat.statut}}</strong> <br>
+            <a href="{{path('livre_like',{'id':livre.id})}}">
+                {% if app.user and livre.isLikedByUser(app.user) %}
+                    <i class="fa-solid fa-thumbs-up"></i>
+                {% else %}
+                    <i class="fa-regular fa-thumbs-up"></i>
+                {% endif %}
+                <span>{{livre.alikes|length}}</span>
+                <span>J'aime</span>
+            </a>
+        </div>
+        <br>
+        <div class="content">
+            <img width="30%" src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/{{livre.image}}" alt="">
+            <p>{{livre.content|raw}}</p>
+        </div>
+        <br>
+        {% if app.user and app.user==livre.user %}
+        <div class="row">
+            <div class="col-2">
+                <a href="{{path('livre_edit',{'id':livre.id})}}" class="btn btn-success">Modifiez le livre</a>
+            </div>
+            <div class="col-2">
+                <a href="{{ path('livre_delete',{'id':livre.id}) }}" class="btn btn-success" id="btnSupprimer">Supprimer le livre</a>
+            </div>
+        </div>
+        {% endif %} 
+    </article>
+    <br>
+    <section id="comments">
+        {% if app.user %}
+            {% form_theme form 'bootstrap_5_layout.html.twig' %}
+            {{form_start(form)}}
+            {{form_row(form.content,{'label':'Ajout Commentaire','attr':{'placeholder':'Texte commentaire'}})}}
+            <button type="submit" class="btn btn-success">Validez !</button>   
+            {{form_end(form)}}
+        {% else %}
+            <h4>Vous devez vous inscrire et vous connecter pour écrire un commentaire</h4>
+        {% endif %}
+        <br><br>
+        <h4>Liste des commentaires (Nombre de commentaires : {{livre.comments|length}} )</h4>   
+        {#  | sort((b, a) => a.id <=> b.id) #}
+        {% for comment in livre.comments | sort | reverse  %}
+            <div class="row">
+                <div class="col-3">
+                    {{comment.user.username}}
+                    ( <small>Commentaire créé le : {{comment.createdAt|date('d/m/Y')}} </small> )
+                    {% if app.user and app.user==comment.user %}
+                        <a href="{{ path('comment_delete',{'id':comment.id}) }}" class="btn btn-primary">Supprimer </a>
+                        <!-- <a href="comment/{{comment.id}}/delete" class="btn btn-">Supprimer </a> -->
+                    {% endif %}
+                </div>
+                <div class="col-9">
+                    {{comment.content|raw}}
+                </div>
+            </div>                 
+            <br>
+        {% endfor %}
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+    // on attend que toute la page soit chargé pour exécuter le java script sur le dom
+    window.addEventListener('load', function () {
+        //Confirmation suppression article sur click du bouton
+        document.getElementById('btnSupprimer').addEventListener('click',function(event){
+            if( !confirm("Voulez vous supprimer cet article ?") ){
+                event.preventDefault();
+            }
+        });
+    });
+    </script>
+    {% endblock %}

@@ -1,0 +1,203 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Le Secret de Lomé {% endblock %}
+
+{% block body %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/lomé.jpg" class="card-img mx-auto d-block"
+                    alt="Livre audio" style="max-width: 50%; height: auto;">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Le Secret de Lomé - Livre Audio</h5>
+                    <p class="card-text"><small class="text-muted">17K Ecoute • 4.7K Votes • 26
+                            Chapitres</small></p>
+                    <!-- Button to trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#audioModal">
+                        Commencer l'écoute
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="audioModal" tabindex="-1" aria-labelledby="audioModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="audioModalLabel">Écouter le Livre Audio</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <audio id="myAudio" controls>
+                                        <source src="{{asset(get_env('CHEMIN_AUDIO'))}}/Secret_Lome.mp3" type="audio/mpeg">
+                                        Votre navigateur ne supporte pas l'élément audio.
+                                    </audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="card">
+        <div class="card-body row">
+            <!-- Left column for the summary -->
+            <div class="col-md-7">
+                <h4 class="card-title">Alexiane_gray</h4>
+                <span class="badge badge-success">Terminée</span>
+                <!-- Book summary -->
+                <p class="card-text mt-4">
+
+                    Un destin à accomplir. Un peuple à libérer. </p>
+
+                <p>Lomé mène une vie parfaite, jusqu'au jour où, lors d'une excursion, elle tombe au fond d'une grotte
+                    et resurgit dans une contrée inhospitalière et terriblement dangereuse : Bâl'Shanta. </p>
+
+                <p> Dans ce monde peuplé de créatures extraordinaires, la jeune fille, qui a toujours obtenu ce qu'elle
+                    voulait, découvre une civilisation organisée en castes et se retrouve assimilée à celle des
+                    esclaves.</p>
+
+                <p>Pour survivre et espérer rentrer chez elle, Lomé devra faire preuve d'une grande force de caractère
+                    et se battre. Heureusement elle pourra compter sur le soutien d'alliés inattendus...</p>
+
+                Bonne écoute ! ❤😉</p>
+                <!-- More book details here -->
+            </div>
+            <!-- Right column for the table of contents -->
+            <div class="col-md-5">
+                <h2>Table des matières</h2>
+                <ul class="list-unstyled">
+                    <!-- Repeat for each chapter -->
+                    <li>
+                        <a href="#prologue" class="text-decoration-none">Prologue</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter1" class="text-decoration-none">Chapitre 1</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter2" class="text-decoration-none">Chapitre 2</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter3" class="text-decoration-none">Chapitre 3</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter4" class="text-decoration-none">Chapitre 4</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter5" class="text-decoration-none">Chapitre 5</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter6" class="text-decoration-none">Chapitre 6</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter7" class="text-decoration-none">Chapitre 7</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter8" class="text-decoration-none">Chapitre 8</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter9" class="text-decoration-none">Chapitre 9</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter10" class="text-decoration-none">Chapitre 10</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter11" class="text-decoration-none">Chapitre 11</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter12" class="text-decoration-none">Chapitre 12</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter13" class="text-decoration-none">Chapitre 13</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter14" class="text-decoration-none">Chapitre 14</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter15" class="text-decoration-none">Chapitre 15</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter16" class="text-decoration-none">Chapitre 16</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter17" class="text-decoration-none">Chapitre 17</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter18" class="text-decoration-none">Chapitre 18</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter19" class="text-decoration-none">Chapitre 19</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter20" class="text-decoration-none">Chapitre 20</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter21" class="text-decoration-none">Chapitre 21</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter22" class="text-decoration-none">Chapitre 22</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter23" class="text-decoration-none">Chapitre 23</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter24" class="text-decoration-none">Chapitre 24</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter25" class="text-decoration-none">Chapitre 25</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                    <li>
+                        <a href="#chapter26" class="text-decoration-none">Chapitre 26</a>
+                        <span class="text-muted float-right">2019</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="card-footer text-muted">© Tous Droits Réservés</p>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+{% endblock %}

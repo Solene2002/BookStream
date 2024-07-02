@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Compte{% endblock %}
+
+{% block body %}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-3">
+  <div class="row">
+    <!-- Profile Sidebar -->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Hola! 🙂</h4>
+          <p>J'adore lire et inventer des histoires, mais je ne pensais pas un jour en écrire. Mais il y a un début à
+            tout ! J'ai trouvé ce site, au début pour lire des fanfictions, puis j'ai décidé d'essayer d'en écrire à mon
+            tour.
+            J'espère que mes histoires plairont et tant pis si ce n'est pas le cas, j'en écrirai quand même pour mon
+            plaisir !</p>
+            <a href="" class="btn btn-primary mt-3">Modifier</a>
+        </div>
+      </div>
+      <div class="card mt-3">
+        <div class="card-body">
+          <h4 class="card-title">Vos Conversations</h4>
+          <p>Hello hello la commu ! Je me permets de vous mettre un lien vers un petit questionnaire.
+            Il va me permettre de mieux vous connaître et aussi m'aider dans mes futurs chapitres..</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Histoire par Solène</h4>
+          <div class="row">
+            <div class="col-sm-4">
+              <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/semeurs.png" class="card-img-top" alt="Lave-Metal">
+            </div>
+            <div class="col-sm-8">
+              <h5 class="mt-0">De Lave, de Metal et de Rage - Les Semeurs de Mort</h5>
+              <p class="text-muted">La geurre entre les sirènes de l'Atlantique et les sirènes scandinaves semble ne pas
+                avoir de fin.
+                Mais l'arrivée dans le combat des sanguinaires jumeaux Hildr et Viktor pourrait bien faire pencher la
+                balance...</p>
+              <span class="badge bg-secondary">Fantasy</span>
+              <span class="badge bg-secondary">Guerre</span>
+              <span class="badge bg-secondary">Océan</span>
+              <span class="badge bg-secondary">Sirène</span>
+              <div class="mt-3">
+                <button class="btn btn-primary btn-sm">Modifier</button>
+                <span class="badge bg-warning text-dark ms-2">Brouillon</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-3">
+        <div class="card-body">
+          <h4 class="card-title">Mes Lectures en Cours</h4>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/livre1-mousquetaires.jpg" class="card-img-top" alt="Livre1">
+                <div class="card-body">
+                  <a href="{{path('bibliotheque_livre')}}">L'Espionne du cardinal</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/lomé.jpg" class="card-img-top" alt="Lomé">
+                <div class="card-body">
+                  <a href="{{path('bibliotheque_audio')}}">Le Secret de Lomé - Livre 1 </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/naruto.jpg" class="card-img-top" alt="naruto">
+                <div class="card-body">
+                  <h5 class="card-title">Quelque chose s'achève</h5>
+                </div>
+              </div>
+            </div>
+            <!-- Add more cards for other stories as needed -->
+          </div>
+          <button class="btn btn-primary mt-3">Afficher plus</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

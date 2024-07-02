@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Liste de Lectures {% endblock %}
+
+{% block body %}
+
+<title>Liste de Lectures Detail</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+<div class="container mt-4">
+  <!-- Row for the header and the list details -->
+  <div class="row">
+    <!-- Column for the cover image -->
+    <div class="col-md-4">
+      <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/couverture_mousquetaire.jpg" class="img-fluid"
+        alt="Couverture de livre">
+      <h5 class="mt-2">Liste de Lectures • 3 Histoires</h5>
+      <!-- Social media icons would go here -->
+    </div>
+    <!-- Column for the list of books -->
+    <div class="col-md-8">
+      <!-- Each book in a card -->
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/livre1-mousquetaires.jpg" class="img-fluid"
+              alt="Espionne du Cardinal">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <a href="{{path('bibliotheque_livre')}}">
+                <h5 class="card-title">L'Espionne du Cardinal - Livre I</h5>
+              </a>
+              <p class="card-text">Faîtes attention. C'est quand on commence à vouloir des choses, ou à les refuser,
+                qu'on se met en danger, ici.
+                Paris, XVIIème siècle Céleste n'est pas une jeune femme comme les autres. Et pour cause...
+                Du haut de ses vingt-cinq ans, elle est la meilleure meurtrière, voleuse et espionne de l'homme le plus
+                puissant
+              </p>
+              <p class="card-text"><small class="text-muted">16.1K Lu 1.5K Votes 65 Chapitres</small></p>
+              <!-- Labels like 'Terminée' and 'Mature' would be added here -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/livre2-mousquetaires.jpg" class="img-fluid"
+              alt="Retour Espionne">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Le retour de l'Espione - Livre II</h5>
+              <p class="card-text">Suite du livre "L'Espionne du Cardinal", à lire en premier de préférence. Six ans se
+                sont
+                écoulés.Six longues années où Céleste, l'ancienne Espionne du Cardinal, s'est terrée dans le royaume de
+                France, priant pour ne jamais plus recroiser les mousquetaires. Mais les choses ont bien changées</p>
+              <p class="card-text"><small class="text-muted">16K Lu 2.1K Votes 107 Chapitres</small></p>
+              <!-- Labels like 'Terminée' and 'Mature' would be added here -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/livre3-mousquetaires.jpg" class="img-fluid"
+              alt="Heritage Espionne">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">L'Héritage de L'Espionne - Livre III</h5>
+              <p class="card-text">La rumeur enfle. Elle arrive, elle arrive, murmurent les courtisans et les
+                serviteurs. Mais de
+                qui parlent-ils ? De la veuve Tréville, la veuve Tréville, ce nom est sur toutes les lèvres. Céleste de
+                Tréville,
+                la richissime veuve de l'ancien régent et duchesse de Ligueux... Est de retour à Paris après quatorze
+                ans d'abscence...</p>
+              <p class="card-text"><small class="text-muted">6.7K Lu 868 Votes 110 Chapitres</small></p>
+              <!-- Labels like 'Terminée' and 'Mature' would be added here -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat the card block for each book -->
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock %}

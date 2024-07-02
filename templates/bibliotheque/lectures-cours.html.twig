@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma Bibliothèque {% endblock %}
+
+{% block body %}
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container mt-3">
+  <h2 class="text-center mb-3"> Ma Bibliothèque</h2>
+  
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="{{ path('bibliotheque_lectures') }}">Lectures en cours</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{path('bibliotheque_liste')}}">Listes de Lectures</a>
+    </li>
+  </ul>
+
+  <h4 class="mt-4">Toutes les histoires</h4>
+
+  <div class="row">
+    <!-- Repeat this block for each story -->
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card">
+        <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/livre1-mousquetaires.jpg" class="card-img-top"
+        alt="Livre1">
+        <div class="card-body">
+          <h5 class="card-title">L'Espionne du Cardinal</h5>
+          <p class="card-text">sineadsternen</p>
+          <p class="card-text"><small class="text-muted">16.1K Lectures • 1.5K Votes </small></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card">
+        <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/lomé.jpg" class="card-img-top" alt="Lomé">
+        <div class="card-body">
+          <h5 class="card-title"> Le Secret de Lomé - Livre 1 </h5>
+          <p class="card-text">Alexiane_Gray</p>
+          <p class="card-text"><small class="text-muted">17K Ecoute • 4.7K Votes </small></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card">
+        <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/naruto.jpg" class="card-img-top" alt="naruto">
+        <div class="card-body">
+          <h5 class="card-title">Quelque chose s'achève</h5>
+          <p class="card-text">Zachanariel</p>
+          <p class="card-text"><small class="text-muted">239K Lectures • 24.9K Votes</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+      <div class="card">
+        <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/frost.jpg" class="card-img-top" alt="Frost">
+        <div class="card-body">
+          <h5 class="card-title">FROST - De Neige et de Glace </h5>
+          <p class="card-text">LydiaTheBard</p>
+          <p class="card-text"><small class="text-muted">1K Ecoute et 130 Likes</small></p>
+        </div>
+      </div>
+    </div>
+    <!-- End of block -->
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}Favoris{% endblock %}
+{% block body %}
+
+<h5>Liste des favoris</h5>
+<ul class="list-group">
+    {% for like in likes %}
+        <li class="list-group-item">
+            <a href="{{path('livre_show',{'id':like.livre.id})}}">
+                {{like.livre.title}} par {{like.livre.user.username}} dans la catégorie {{like.livre.category.description}}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

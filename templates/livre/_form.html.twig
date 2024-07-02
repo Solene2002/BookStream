@@ -1,0 +1,20 @@
+{% form_theme formLivre 'bootstrap_5_layout.html.twig' %}
+
+{{form_start(formLivre)}}
+    {{ form_row(formLivre.title,{'attr':{'placeholder':'Titre du Livre'},'label':'Titre'}) }}
+    {{ form_row(formLivre.content,{'attr':{'placeholder':'Contenu du Livre'},'label':'Contenu'}) }}
+    {{ form_row(formLivre.fichierimage) }}
+    {{ form_row(formLivre.fichieraudio) }}
+    {{ form_row(formLivre.category,{'attr':{'placeholder':'Catégorie du Livre'},'label':'Catégorie'}) }}
+    {{ form_row(formLivre.etat,{'attr':{'placeholder':'Etat du Livre'},'label':'Etat'}) }}
+    {% if livre is defined %}    
+        <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/{{livre.image}}" alt="">
+    {% endif %}
+    <br><br>
+    <button type="submit" class="btn btn-success">{{button_label}}</button>
+{{form_end(formLivre)}}
+
+<script src="/ckeditor/ckeditor.js"></script>
+<script>      
+    CKEDITOR.replace( 'livre_content' );
+</script>

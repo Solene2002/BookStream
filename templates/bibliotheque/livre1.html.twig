@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} L'Espionne du Cardinal - Livre I {% endblock %}
+
+{% block body %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container-fluid">
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4 d-flex justify-content-center align-items-center">
+        <img src="{{asset(get_env('CHEMIN_IMAGES_LIVRE'))}}/livre1-mousquetaires.jpg" class="card-img mx-auto d-block"
+          alt="Livre 1" style="max-width: 50%; height: auto;">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">L'Espionne du Cardinal - Livre I</h5>
+          <p class="card-text"><small class="text-muted">16.1K Lectures • 1.5K Votes • 65
+              Chapitres</small></p>
+          <a href="{{path('chapitres_index')}}" class="btn btn-primary">Commencer la Lecture</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="card">
+    <div class="card-body row">
+      <!-- Left column for the summary -->
+      <div class="col-md-7">
+        <h4 class="card-title">sineadsternen</h4>
+        <span class="badge badge-success">Terminée</span>
+        <span class="badge badge-danger">Mature</span>
+        <!-- Book summary -->
+        <p class="card-text mt-4">Paris, XVIIème siècle
+
+          Céleste n'est pas une jeune femme comme les autres. Et pour cause... Du haut de ses vingt-cinq ans, elle est
+          la meilleure meurtrière, voleuse et espionne de l'homme le plus puissant du royaume de France : le Cardinal de
+          Richelieu. Accompagnée de son fidèle frère, Alec, elle enchaîne missions et assassinats pour le Cardinal,
+          qu'elle considère comme son père. Jusqu'au jour où, sous les faux traits de la jeune Colombe, comtesse de
+          Vertus, Céleste entre à la cour avec un seul et unique but : espionner la Reine Anne d'Autriche.
+
+          Mais à partir de ce moment-là, plus rien ne se passe comme prévu : on attente à la vie de la reine, Céleste
+          découvre petit à petit de terribles secrets, et rencontre un homme qu'elle n'aurait jamais dû rencontrer, et
+          encore moins apprécier... Son nom seul aurait dû la dégoutter et l'éloigner.
+
+          Et ce nom...
+
+          Il s'agit de Jean-Armand de Tréville, Capitaine des Mousquetaires du Roi.</p>
+        <!-- More book details here -->
+      </div>
+      <!-- Right column for the table of contents -->
+      <div class="col-md-5">
+        <h2>Table des matières</h2>
+        <ul class="list-unstyled">
+          <!-- Repeat for each chapter -->
+          <li>
+            <a href="{{path('chapitres_index')}}" class="text-decoration-none">⚜ Tout d'abord... ⚜</a>
+            <span class="text-muted float-right">sam., nov. 14, 2020</span>
+          </li>
+          <li>
+            <a href="#chapter2" class="text-decoration-none">⚜ Prologue : Une nuit de mars ⚜</a>
+            <span class="text-muted float-right">sam., nov. 14, 2020</span>
+          </li>
+          <li>
+            <a href="#chapter3" class="text-decoration-none">⚜ Chapitre 1 : Sur les toits de Paris</a>
+            <span class="text-muted float-right">mer., nov. 18, 2020</span>
+          </li>
+          <li>
+            <a href="#chapter4" class="text-decoration-none">⚜ Chapitre 2 : Les jumeaux</a>
+            <span class="text-muted float-right">sam., nov. 21, 2020</span>
+          </li>
+          <li>
+            <a href="#chapter5" class="text-decoration-none">⚜ Chapitre 3 : Colombe de Vertus</a>
+            <span class="text-muted float-right">mer., nov. 25, 2020</span>
+          </li>
+          <li>
+            <a href="#chapter6" class="text-decoration-none">⚜ Chapitre 4 : Les Mousquetaires</a>
+            <span class="text-muted float-right">sam., nov. 28, 2020</span>
+          </li>
+          <li>
+            <a href="#chapter7" class="text-decoration-none">⚜ Chapitre 5 : Le bal de l'équinoxe</a>
+            <span class="text-muted float-right">mer., dec. 2, 2020</span>
+          </li>
+          <li>
+            <a href="#chapter8" class="text-decoration-none">⚜ Chapitre 6 : Missive secrète</a>
+            <span class="text-muted float-right">sam., dec. 5, 2020</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="card-footer text-muted">© Tous Droits Réservés</p>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+{% endblock %}
